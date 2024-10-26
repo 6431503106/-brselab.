@@ -93,7 +93,7 @@ export default function ProductEditScreen() {
 
     return (
         <div className='w-1/3 mx-auto'>
-            <h2 className="text-2xl font-semibold mb-4">Edit Product</h2>
+            <h2 className="text-2xl font-semibold mb-4">Edit Product.</h2>
             <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                     <label htmlFor="name" className="block font-medium">
