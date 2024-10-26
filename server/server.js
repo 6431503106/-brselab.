@@ -55,8 +55,8 @@ app.use('/api/admin', adminRoutes)
 /*const __dirname = path.dirname(__filename);*/
 
 // Serve static files from /uploads
-const __dirname = path.resolve()
-app.use("/uploads", express.static(path.join(__dirname, "uploads")))
+const __dirname = path.resolve();
+app.use('/uploads/images', express.static(path.join(__dirname, '/uploads/images')));
 
 if (process.env.NODE_ENV === "production") {
   const __dirname = path.resolve()
