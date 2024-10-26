@@ -65,7 +65,7 @@ export default function LoginScreen() {
     return (
         <div className="container mx-auto mt-8 mb-28 p-4 max-w-md " style={{ backgroundColor: '#FFFFFF' }}>
         <div className="flex flex-col items-center justify-center">
-        <img src="../public/images/icon.png" alt="Logo" className="logo" style={{ width: '150px', height: '150px' }} />
+        <img src="/images/icon.png" alt="Logo" className="logo" style={{ width: '150px', height: '150px' }} />
             <h2 className="text-2xl font-semibold mb-4">SE LAB</h2>
             
         </div>

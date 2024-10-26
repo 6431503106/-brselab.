@@ -170,7 +170,7 @@ const Header = () => {
                     inlineCollapsed={!isSidebarOpen}
                 >
                     <Link to="/" className="brand-link">
-    <img src="../client/public/images/icon.png" alt="Admin Logo" className="brand-image img-circle mr-2" />
+    <img src="/images/icon.png" alt="Admin Logo" className="brand-image img-circle mr-2" />
     <span className={`brand-text text-white ${isSidebarOpen ? '' : 'hide'}`}>SE LAB MFU</span>
 </Link>
                     {userInfo && userInfo.isAdmin && (
