@@ -9,10 +9,11 @@ import { errorHandler, notFound } from "./middleware/errorMiddleware.js"
 import cookieParser from "cookie-parser"
 import orderRoutes from "./routes/orderRoutes.js"
 import uploadRoutes from "./routes/uploadRoutes.js"
+import stripe from "./utils/stripe.js"
 import generalRoutes from "./routes/generalRoutes.js";
 import adminRoutes from './routes/adminRoutes.js';
 import categoryRoutes from './routes/categoryRoutes.js';
-/*import { fileURLToPath } from 'url';*/
+import { fileURLToPath } from 'url';
 
 dotenv.config()
 
@@ -39,7 +40,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // Stripe setup
-/*stripe(app)*/
+stripe(app)
 
 // API Routes
 app.use("/api/products", productRoutes)
@@ -55,19 +56,21 @@ app.use('/api/admin', adminRoutes)
 /*const __dirname = path.dirname(__filename);*/
 
 // Serve static files from /uploads
-const __dirname = path.resolve();
-
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+const __dirname = path.resolve()
+app.use("/uploads", express.static(path.join(__dirname, "uploads")))
 
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "client", "dist")));
-    app.use("*", (req, res) =>
-        res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"))
-    );
+  const __dirname = path.resolve()
+  app.use("/uploads", express.static(path.join(__dirname, "uploads")))
+  app.use(express.static(path.join(__dirname, "/client/dist")))
+  app.use("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"))
+  )
 } else {
-    app.get("/", (req, res) => {
-        res.send("API is running...");
-    });
+  app.use("/uploads", express.static(path.join(__dirname, "uploads")))
+  app.get("/", (req, res) => {
+    res.send("Api is running...")
+  })
 }
 
 /*const __dirname = path.resolve()
