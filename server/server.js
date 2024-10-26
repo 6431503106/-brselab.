@@ -9,7 +9,6 @@ import { errorHandler, notFound } from "./middleware/errorMiddleware.js"
 import cookieParser from "cookie-parser"
 import orderRoutes from "./routes/orderRoutes.js"
 import uploadRoutes from "./routes/uploadRoutes.js"
-import stripe from "./utils/stripe.js"
 import generalRoutes from "./routes/generalRoutes.js";
 import adminRoutes from './routes/adminRoutes.js';
 import categoryRoutes from './routes/categoryRoutes.js';
@@ -38,9 +37,6 @@ app.use(
 app.use(cookieParser())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-
-// Stripe setup
-stripe(app)
 
 // API Routes
 app.use("/api/products", productRoutes)
