@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Create an instance of axios
-export const BASE_URL = "http://localhost:5000";
+export const BASE_URL = "https://br-selab.onrender.com";
 
 export const api = axios.create({
   baseURL: BASE_URL + "/api",
