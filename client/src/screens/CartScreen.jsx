@@ -105,7 +105,6 @@ export default function CartScreen() {
   const categories = {
     "66cca9155fa68b084904d0d1": "Free",
     "66cca9325fa68b084904d0d6": "Item",
-    // เพิ่ม categoryId อื่น ๆ ตามต้องการ
   };
 
   const today = format(new Date(), 'yyyy-MM-dd');
